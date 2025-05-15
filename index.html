@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almost Heaven Exterior Cleaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            100: '#e6f0f9',
+                            200: '#b3d5f0',
+                            300: '#80bae7',
+                            400: '#4d9fde',
+                            500: '#1a84d5',
+                            600: '#006cba',
+                            700: '#005494',
+                            800: '#003c6e',
+                            900: '#002448',
+                        },
+                        sand: {
+                            100: '#f9f7f2',
+                            200: '#f0ece0',
+                            300: '#e6e1ce',
+                            400: '#dcd6bc',
+                            500: '#d2cbaa',
+                            600: '#b8b08d',
+                            700: '#9e9670',
+                            800: '#847b53',
+                            900: '#6a6136',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script src="/app.js"></script>
+    <style>
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #1a84d5;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body class="bg-sand-100 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <img src="logo.png" alt="Almost Heaven Exterior Washing logo" class="w-[70px] h-[70px]" />
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="nav-link text-gray-700 hover:text-primary-600">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-primary-600">Services</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary-600">About</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary-600">Gallery</a>
+                    <a href="#contact"
+                        class="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition">Get a
+                        Quote</a>
+                </div>
+                <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Home</a>
+                <a href="#services"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Services</a>
+                <a href="#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">About</a>
+                <a href="#gallery"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50">Gallery</a>
+                <a href="#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary-600 hover:bg-primary-700">Get
+                    a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-[600px]">
+        <!-- dark overlay -->
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+
+        <!-- background image -->
+        <div class="h-full w-full" style="
+      background-image: url('/bghero.png');
+      background-size: cover;
+      background-position: center;
+    "></div>
+
+        <!-- content: center on mobile, left from md up -->
+        <div class="absolute inset-0 flex items-center justify-center md:justify-start">
+            <div class="max-w-4xl w-[90%] md:w-[80%] md:ml-[10%] text-center md:text-left space-y-6">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                    Make Your Property<br />
+                    <span class="text-primary-600">Shine</span>
+                </h1>
+                <p class="text-xl text-white">
+                    Professional exterior cleaning services to restore and protect your property’s beauty.
+                </p>
+
+                <!-- two-button row -->
+                <div class="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start 
+               space-y-4 md:space-y-0 md:space-x-4 w-full">
+                    <a href="#contact" class="w-full md:w-auto inline-block px-8 py-3 bg-primary-600 text-white text-lg 
+                 font-medium rounded-md hover:bg-primary-700 transition">
+                        Get Your Free Quote
+                    </a>
+                    <a href="tel:8135391184" class="w-full md:w-auto inline-block px-8 py-3 bg-[#f4e3c7] text-primary-600 text-lg 
+                 font-medium rounded-md hover:bg-[#e7d6ba] transition">
+                        Call Now
+                    </a>
+
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-800 mb-4">Our Professional Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">From pressure washing to window cleaning, we've got
+                    your property covered</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md p-8 text-center hover:border-primary-500 border-2 border-transparent transition">
+                    <div
+                        class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                        <i class="fas fa-water text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pressure Washing</h3>
+                    <p class="text-gray-600">Remove stubborn dirt, grime, and stains from driveways, sidewalks, and
+                        decks with our high-pressure cleaning system.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md p-8 text-center hover:border-primary-500 border-2 border-transparent transition">
+                    <div
+                        class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                        <i class="fas fa-home text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">House Wash</h3>
+                    <p class="text-gray-600">Gentle yet effective cleaning solutions to restore your home's exterior
+                        without damaging surfaces.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md p-8 text-center hover:border-primary-500 border-2 border-transparent transition">
+                    <div
+                        class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                        <!-- Inline SVG Roof + Droplet Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <!-- Roof shape -->
+                            <path d="M12 3l8 6h-2v8h-4v-5H10v5H6V9H4l8-6z" />
+                            <!-- Droplet -->
+                            <path
+                                d="M12 11.5c-0.55 0-1 .45-1 1 0 .28.11.53.29.71L12 15l.71-.79c.18-.18.29-.43.29-.71 0-.55-.45-1-1-1z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Roof Wash</h3>
+                    <p class="text-gray-600">
+                        Safe roof cleaning that removes moss, algae, and stains while preserving your roof’s integrity.
+                    </p>
+                </div>
+
+
+                <!-- Service 4 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md p-8 text-center hover:border-primary-500 border-2 border-transparent transition">
+                    <div
+                        class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                        <i class="fas fa-window-maximize text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Window Cleaning</h3>
+                    <p class="text-gray-600">Streak-free window cleaning that enhances your home's curb appeal and lets
+                        in more natural light.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-sand-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="ourstory.jpg" alt="Our team working"
+                        class="rounded-lg shadow-lg w-full h-auto lg:max-h-[500px] object-cover">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-800 mb-6">About Almost Heaven Exterior
+                        Cleaning</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        During our college summers, we gained hands-on experience in exterior cleaning—pressure washing
+                        campus buildings, revitalizing local homes, and mastering every technique from roof scrubbing to
+                        window shining.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8">
+                        That early work instilled a strong work ethic, keen attention to detail, and a commitment to
+                        excellence that we bring to every job today—ensuring your property always looks its very best.
+                    </p>
+
+
+                    <!-- Why Choose Us -->
+                    <div id="why-choose" class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-600 text-white">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Eco-Friendly Solutions</h3>
+                                <p class="text-gray-600">We use biodegradable cleaners that effectively clean without
+                                    harming plants, pets, or the environment.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-600 text-white">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Licensed & Insured</h3>
+                                <p class="text-gray-600">Our team is fully licensed and insured, providing you with
+                                    peace of mind and protection.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-600 text-white">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Satisfaction Guarantee</h3>
+                                <p class="text-gray-600">We stand behind our work with a 100% satisfaction guarantee. If
+                                    you're not happy, we'll make it right.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="team" class="py-20 bg-white-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+
+                <!-- Text on left -->
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-800 mb-6">Meet the Team</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+
+                        Our experienced exterior cleaning team brings years of expertise and a true passion for
+                        perfection. We work seamlessly together to treat every home as if it were our own—delivering
+                        spotless, lasting results that make your property shine.
+
+                    </p>
+
+                </div>
+
+                <!-- Image on right -->
+                <div class="lg:w-1/2">
+                    <img src="meettheteam.jpg" alt="Almost Heaven Exterior Washing Team"
+                        class="rounded-lg shadow-lg w-full h-auto lg:max-h-[500px] object-cover" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Mission and Values -->
+    <section id="mission" class="py-20 bg-sand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-800 mb-4">Our Mission & Values</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We exist to deliver exceptional, safe, and affordable
+                    exterior cleaning solutions that enhance property value and curb appeal.</p>
+            </div>
+
+            <!-- Values Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Integrity</h3>
+                    <p class="text-gray-600">We do what's right, even when no one is watching, maintaining honesty and
+                        strong moral principles.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                        <i class="fas fa-medal text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Quality</h3>
+                    <p class="text-gray-600">Every job receives our full attention to detail and commitment to
+                        excellence in execution.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                        <i class="fas fa-people-carry text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Community</h3>
+                    <p class="text-gray-600"> We strengthen local neighborhoods by hiring from within, and ensuring
+                        every job we do adds lasting value to our community.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Reliability</h3>
+                    <p class="text-gray-600">We show up on time, communicate clearly, and follow through on every
+                        commitment we make.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-primary-600 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl text-white md:text-4xl font-bold text-primary-800 mb-4">Our Work</h2>
+                <p class="text-xl text-white max-w-3xl mx-auto">See the transformations we've created for properties
+                    just like yours</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="driveway.png" alt="Before cleaning" class="w-full h-64 object-cover">
+                    <div class="p-6 border-t border-gray-100">
+                        <h3 class="text-lg font-medium text-gray-800 mb-2">Driveway Restoration</h3>
+                        <p class="text-gray-600">Before and after of a concrete driveway cleaning</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="window.jpg" alt="Expert window cleaning" class="w-full h-64 object-cover" />
+                    <div class="p-6 border-t border-gray-100">
+                        <h3 class="text-lg font-medium text-gray-800 mb-2">Window Cleaning</h3>
+                        <p class="text-gray-600">
+                            Streak-free, crystal-clear windows that brighten your home and enhance curb appeal.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="lania.png" alt="Clean lanai screen enclosure" class="w-full h-64 object-cover" />
+                    <div class="p-6 border-t border-gray-100">
+                        <h3 class="text-lg font-medium text-gray-800 mb-2">Lanai Cleaning</h3>
+                        <p class="text-gray-600">
+                            Thorough lanai and screen enclosure wash to remove mold, pollen, and grime for crystal-clear
+                            views.
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="cleanroof.png" alt="Before cleaning" class="w-full h-64 object-cover">
+                    <div class="p-6 border-t border-gray-100">
+                        <h3 class="text-lg font-medium text-gray-800 mb-2">Roof Cleaning</h3>
+                        <p class="text-gray-600">Removing algae and moss from a tile roof</p>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="fence.png" alt="Before cleaning" class="w-full h-64 object-cover">
+                    <div class="p-6 border-t border-gray-100">
+                        <h3 class="text-lg font-medium text-gray-800 mb-2">Fence Cleaning</h3>
+                        <p class="text-gray-600">Vinyl fence brightening that lasted years</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="patio.png" alt="Before cleaning" class="w-full h-64 object-cover">
+                    <div class="p-6 border-t border-gray-100">
+                        <h3 class="text-lg font-medium text-gray-800 mb-2">Patio Cleaning</h3>
+                        <p class="text-gray-600">Bringing new life to an aging stone patio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="py-20 bg-primary-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-primary-100 max-w-3xl mx-auto">Don't just take our word for it</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+                <div class="bg-white bg-opacity-10 rounded-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J."
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sarah J.</h4>
+                            <div class="flex text-primary-200">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"AquaClean transformed my home's exterior after just one visit. The difference is
+                        night and day - my house looks brand new again!"</p>
+                </div>
+
+          
+                <div class="bg-white bg-opacity-10 rounded-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T."
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Michael T.</h4>
+                            <div class="flex text-primary-200">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"The team was professional, efficient, and left my property spotless. I'll be
+                        using them for all my exterior cleaning needs moving forward."</p>
+                </div>
+
+             
+                <div class="bg-white bg-opacity-10 rounded-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa M."
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Lisa M.</h4>
+                            <div class="flex text-primary-200">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"I was worried about the chemicals harming my plants, but they used eco-friendly
+                        products that were completely safe. The results were amazing!"</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-sand-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-800 mb-6">Get in Touch</h2>
+                    <p class="text-lg text-gray-700 mb-8">Ready to transform your property? Contact us today for a free,
+                        no-obligation quote. Our team is standing by to answer any questions you may have about our
+                        services.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-600 text-white">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Call Us</h3>
+                                <p class="text-gray-600">(813) 539-1184</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-600 text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Email Us</h3>
+                                <p class="text-gray-600">almostheavenexteriorcleaning@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-600 text-white">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Visit Us</h3>
+                                <p class="text-gray-600">3811 Morgons Castle Ct
+                            </div>
+
+                        </div>
+                        <div class="mt-6">
+                            <h3 class="text-3xl md:text-4xl font-bold text-primary-800 mb-6">Areas We Service</h3>
+                            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                <ul>Land O' Lakes</ul>
+                                <ul>Lutz</ul>
+                                <ul>Odessa</ul>
+                                <ul>Carrollwood</ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-primary-800 mb-6">Request a Free Quote</h3>
+                    <form id="quote-form">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                placeholder="John Doe">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                placeholder="john@example.com">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                placeholder="(555) 123-4567">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed</label>
+                            <select id="service" name="service"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                                <option value="">Select a service</option>
+                                <option value="pressure-washing">Pressure Washing</option>
+                                <option value="house-wash">House Wash</option>
+                                <option value="roof-wash">Roof Wash</option>
+                                <option value="window-cleaning">Window Cleaning</option>
+                                <option value="other">Other (Please Specify)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" name="message"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                                placeholder="Tell us about your project..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-3 px-6 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                            Get My Free Quote
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <a href="/">
+                            <img src="logo.png" alt="Almost Heaven Exterior Cleaning Logo" class="w-20 h-20" />
+                        </a>
+                    </div>
+
+                    <p class="text-primary-300">Professional exterior cleaning services to restore and protect your
+                        property's beauty and value.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-primary-300 hover:text-white transition">Pressure Washing</a></li>
+                        <li><a href="#" class="text-primary-300 hover:text-white transition">House Wash</a></li>
+                        <li><a href="#" class="text-primary-300 hover:text-white transition">Roof Cleaning</a></li>
+                        <li><a href="#" class="text-primary-300 hover:text-white transition">Window Cleaning</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-primary-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="#mission" class="text-primary-300 hover:text-white transition">Our Mission</a></li>
+                        <li><a href="#gallery" class="text-primary-300 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#contact" class="text-primary-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-800 text-white hover:bg-primary-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-800 text-white hover:bg-primary-700 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-800 text-white hover:bg-primary-700 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-800 text-white hover:bg-primary-700 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="text-primary-300">Ready for a spotless finish? Call us today:</p>
+                    <a href="tel:+8135391184"
+                        class="inline-block mt-2 px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-500 transition">
+                        (813) 539-1184
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-primary-400">© 2025 Almost Heaven Exterior Washing. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-primary-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-primary-400 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark mode toggle (responsive to system preferences)
+        function updateTheme() {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+
+        updateTheme();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Hide mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
